@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  checkinhelper:
+    image: naomi/checkinhelper:lastest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: checkinhelper
+    volumes:
+      - ./checkinhelper/config:/app/checkinhelper/config
+    environment:
+      CRON_SIGNIN: "40 6 * * *"
