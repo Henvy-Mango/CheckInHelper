@@ -28,8 +28,8 @@ class jdCheckin(object):
             raise Exception(e)
         return response
 
-    # {"code": "0", "data": {"signedRan": "B", "status": "1", "beanUserType": 1, "awardType": "1", "dailyAward": {"type": "1", "title": "签到成功，", "subTitle": "恭喜您获得", "beanAward": {"beanCount": "3", "beanImgUrl": "https://m.360buyimg.com/njmobilecms/jfs/t23452/19/1797778090/8622/14e40996/5b69974eN9880f531.png"}}, "signRemind": {"title": "领京豆", "content": "签到领京豆啦，断签会错过连签礼包哦", "popImgUrl": "https://m.360buyimg.com/njmobilecms/jfs/t25144/349/281504248/8702/2397c397/5b6ab64fN016b2a9d.png", "beanHomeLink": "{'des':'m','params':{'url':'https://bean.m.jd.com'}}"}, "signAiRan": "A", "growthResult": {"addedGrowth": 10, "growth": 1050, "level": 5, "levelUp": False, "beanSent": False}, "totalUserBean": "428", "continuousDays": "128", "tomorrowSendBeans": 0, "activityFlag": False}}
-    # {"code": "0", "data": {"signedRan": "B", "status": "2", "beanUserType": 1, "awardType": "1", "dailyAward": {"type": "1", "title": "今天已签到，", "subTitle": "获得奖励", "beanAward": {"beanCount": "3", "beanImgUrl": "https://m.360buyimg.com/njmobilecms/jfs/t23452/19/1797778090/8622/14e40996/5b69974eN9880f531.png"}}, "signRemind": {"title": "领京豆", "content": "签到领京豆啦，断签会错过连签礼包哦", "popImgUrl": "https://m.360buyimg.com/njmobilecms/jfs/t25144/349/281504248/8702/2397c397/5b6ab64fN016b2a9d.png", "beanHomeLink": "{'des':'m','params':{'url':'https://bean.m.jd.com'}}"}, "continuousDays": "128", "tomorrowSendBeans": 0}}
+    # {"code": "0", "data": {"signedRan": "B", "status": "1", "beanUserType": 1, "awardType": "1", "continuityAward": {"type": "1", "title": "签到成功，", "subTitle": "恭喜您获得", "beanAward": {"beanCount": "3", "beanImgUrl": "https://m.360buyimg.com/njmobilecms/jfs/t23452/19/1797778090/8622/14e40996/5b69974eN9880f531.png"}}, "signRemind": {"title": "领京豆", "content": "签到领京豆啦，断签会错过连签礼包哦", "popImgUrl": "https://m.360buyimg.com/njmobilecms/jfs/t25144/349/281504248/8702/2397c397/5b6ab64fN016b2a9d.png", "beanHomeLink": "{'des':'m','params':{'url':'https://bean.m.jd.com'}}"}, "signAiRan": "A", "growthResult": {"addedGrowth": 10, "growth": 1050, "level": 5, "levelUp": False, "beanSent": False}, "totalUserBean": "428", "continuousDays": "128", "tomorrowSendBeans": 0, "activityFlag": False}}
+    # {"code": "0", "data": {"signedRan": "B", "status": "2", "beanUserType": 1, "awardType": "1", "continuityAward": {"type": "1", "title": "今天已签到，", "subTitle": "获得奖励", "beanAward": {"beanCount": "3", "beanImgUrl": "https://m.360buyimg.com/njmobilecms/jfs/t23452/19/1797778090/8622/14e40996/5b69974eN9880f531.png"}}, "signRemind": {"title": "领京豆", "content": "签到领京豆啦，断签会错过连签礼包哦", "popImgUrl": "https://m.360buyimg.com/njmobilecms/jfs/t25144/349/281504248/8702/2397c397/5b6ab64fN016b2a9d.png", "beanHomeLink": "{'des':'m','params':{'url':'https://bean.m.jd.com'}}"}, "continuousDays": "128", "tomorrowSendBeans": 0}}
 
     def run(self):
         sign_info = self._sign_info
@@ -40,12 +40,12 @@ class jdCheckin(object):
 
         status = sign_info.get('data').get('status')
 
-        if status == 1:
-            data = sign_info.get('data').get('dailyAward')
+        if status == '1':
+            data = sign_info.get('data').get('continuityAward')
             msg = data.get('title') + '获得' + data.get('beanAward').get('beanCount') + '京豆'
             total = '😎总共' + sign_info.get('data').get('totalUserBean') + '京豆'
         else:
-            msg = sign_info.get('data').get('dailyAward').get('title').split('，')[0]
+            msg = sign_info.get('data').get('continuityAward').get('title').split('，')[0]
             total = '🤷‍'
             if msg == '今天已签到':
                 log.info('jd 重复签到')
