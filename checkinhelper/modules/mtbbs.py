@@ -25,10 +25,10 @@ class mtbbsCheckin(object):
                       'cQWy_2132_auth': extract_cookie('cQWy_2132_auth', cookie), }
 
         session = requests.session()
+        session.cookies.update(cookie_tmp)
         session.get(url)
 
         cookie_session = session.cookies.get_dict()
-        cookie_session.update(cookie_tmp)
         return cookie_session
 
     @property
