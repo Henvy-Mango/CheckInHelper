@@ -6,8 +6,8 @@ from checkinhelper.tools.utils import request, extract_cookie, log
 class pdawikiCheckin(object):
     SIGN_URL = 'https://www.pdawiki.com/forum/plugin.php?id=mogu_lottery:result'
     REFERER_URL = 'https://www.pdawiki.com/forum/plugin.php?id=mogu_lottery:home&actid=1'
-    USER_AGENT = 'Mozilla/5.0 (Linux; Android 9; MI 6 Build/PKQ1.190118.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.62 XWEB/2791 MMWEBSDK/201201 Mobile Safari/537.36 MMWEBID/4858 MicroMessenger/8.0.1.1841(0x28000151) Process/toolsmp WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64'
-    DATA_TEXT = 'actid=1&lottery=&formhash=c902613d'
+    USER_AGENT = 'Mozilla/5.0 (Linux; Android 11; M2011K2C Build/RKQ1.200928.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.72 MQQBrowser/6.2 TBS/045807 Mobile Safari/537.36 MMWEBID/4858 MicroMessenger/8.0.10.1960(0x28000A3D) Process/tools WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64'
+    DATA_TEXT = 'actid=1&lottery=&formhash=d00ec163'
 
     def __init__(self, cookie: str = None):
         self._cookies = self.get_update_cookie(self.REFERER_URL, cookie)
@@ -87,5 +87,5 @@ MESSAGE_TEMPLATE = '''
 
 if __name__ == "__main__":
     print(pdawikiCheckin(
-        "usoK_2132_saltkey=eey2D4Uy; usoK_2132_sid=z1DZ1O; usoK_2132_auth=c619THUAQPxksKAaezL6gXejoPyP7JS3ZGVEuH9ktKpe5VHVwiEkiKz4h13XukGWc9tmdDDNsCr%2B86t114WXGj3mIvE") \
+        "usoK_2132_saltkey=NW3W1HHO; usoK_2132_sid=bUjpzZ; usoK_2132_auth=5c5dhXk%2BVzHyi%2Fxzh0loInyFD1ZUrKcLGm0oAWSTZrN38gkG2O166BfzLvN1dMJGVk8p%2Bvt0YfrYRH4ouOZP%2BbS7Rdc") \
           .run())
