@@ -41,11 +41,16 @@ class jdCheckin(object):
         status = sign_info.get('data').get('status')
 
         data = sign_info.get('data')
+        award = sign_info.get('data').get('continuityAward')
+        if award is None:
+            award = sign_info.get('data').get('dailyAward')
+
         if status == '1':
-            msg = data.get('dailyAward').get('title') + '获得' + data.get('dailyAward').get('beanAward').get('beanCount') + '京豆'
+            msg = award.get('title') + '获得' + \
+                  award.get('beanAward').get('beanCount') + '京豆'
             total = '😎总共' + data.get('totalUserBean') + '京豆'
         else:
-            msg = data.get('dailyAward').get('title').split('，')[0]
+            msg = award.get('title').split('，')[0]
             total = '🤷‍'
             if msg == '今天已签到':
                 log.info('jd 重复签到')
