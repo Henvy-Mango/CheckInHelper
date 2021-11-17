@@ -57,8 +57,3 @@ MESSAGE_TEMPLATE = '''
     🏃‍连续签到: {continuous} 天
     👴签到总数: {count} 天
     {end:#^18}'''
-
-if __name__ == "__main__":
-    print(eudictCheckin(
-        "QYN eyJ1c2VyaWQiOiI2YmEwMGYxYy00Y2MwLTExZWEtYmIxZC0wMDUwNTY4NmFlOWIiLCJ0b2tlbiI6IjlYNThFZEdnOG5RSDJRNW9jK1B1Qyt5b3dUMD0iLCJ2X3RpbmciOnRydWUsInVybHNpZ24iOiJYYkV1a24wdUVCQ1NrajlEMlRLNUpYR3FKZE09IiwidmYiOjAsInQiOiJBQklNVFl3TXpFME16QXhPQT09IiwiZmwiOjE1ODE0MjA1MjM2MzYsImxjIjoxNX0=") \
-          .run())
