@@ -74,6 +74,3 @@ MESSAGE_TEMPLATE = '''
     {today:#^18}
     👀{msg}
     {end:#^18}'''
-
-if __name__ == "__main__":
-    print(bcomicCheckin("1b3c56bae9b79ae3445344f5b0d14691").run())

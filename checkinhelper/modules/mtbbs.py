@@ -73,8 +73,3 @@ MESSAGE_TEMPLATE = '''
     🏃连续签到: {continuous} 天
     😍{msg}
     {end:#^18}'''
-
-if __name__ == "__main__":
-    print(mtbbsCheckin(
-        "cQWy_2132_saltkey=DDdOawR0; cQWy_2132_sid=VufQbr; cQWy_2132_auth=94d9Nnb1uykGEV9RTo0bd79F%2B%2B6a5%2F2one5Hbn1UM8NwSYxUEjp2TRhfSxPapEHuCckkuAFB3QjKEzTSZhST%2FG%2BZIQ") \
-          .run())
