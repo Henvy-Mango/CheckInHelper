@@ -79,8 +79,3 @@ MESSAGE_TEMPLATE = '''
     🏃‍连续签到: {continuous} 天
     {total}
     {end:#^18}'''
-
-if __name__ == "__main__":
-    print(jdCheckin(
-        "pin=jd_5e5be3bd68b3e; wskey=AAJgRSA2AECNhCtEmQrpzr0uyTyTOm68eOCCMh1G8GTDrh-nQDJhj9x6dmGB8Z4F-mdWvuYf_2RacjrXp0wKKOw86mR-BQjz; whwswswws=sUPPeQAuADxnbtLJ2GeiKOmO67ndipxPpGoPStLPZe3RaIz5+oje0ZZbRkf+PiKZlFEEWXzwQ9VaC0sH") \
-          .run())

@@ -65,8 +65,3 @@ MESSAGE_TEMPLATE = '''
     {today:#^18}
     🤗{msg}
     {end:#^18}'''
-
-if __name__ == "__main__":
-    print(tsdmCheckin(
-        "s_gkr8_f779_auth=cbeeiPX772sYC0dqMkhfYm1VPpjDdroXF%2F27VaGk83oWwkUPA5pQXvAtmEt517Khn%2BKE7owrpCT24f2zwGRAmPq2S3v6; s_gkr8_f779_sid=86G3kK; s_gkr8_f779_saltkey=5nVZHA8L") \
-          .run())

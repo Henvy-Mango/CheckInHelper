@@ -84,8 +84,3 @@ MESSAGE_TEMPLATE = '''
     {today:#^18}
     ✨{msg}
     {end:#^18}'''
-
-if __name__ == "__main__":
-    print(pdawikiCheckin(
-        "usoK_2132_saltkey=NW3W1HHO; usoK_2132_sid=bUjpzZ; usoK_2132_auth=5c5dhXk%2BVzHyi%2Fxzh0loInyFD1ZUrKcLGm0oAWSTZrN38gkG2O166BfzLvN1dMJGVk8p%2Bvt0YfrYRH4ouOZP%2BbS7Rdc") \
-          .run())
