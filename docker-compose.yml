@@ -7,6 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: checkinhelper
+    restart: always
     volumes:
       - ./checkinhelper/config:/app/checkinhelper/config
     environment:

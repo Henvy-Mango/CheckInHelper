@@ -76,4 +76,4 @@ MESSAGE_TEMPLATE = '''
     {end:#^18}'''
 
 if __name__ == "__main__":
-    print(bcomicCheckin("c0ddcaa522681b09f82028c4a7d60951").run())
+    print(bcomicCheckin("1b3c56bae9b79ae3445344f5b0d14691").run())
