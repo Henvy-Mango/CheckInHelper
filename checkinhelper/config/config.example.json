@@ -4,7 +4,7 @@
   "RUN_ENV": "prod",
   "COOKIE_EUDICT": "",
   "COOKIE_PDAWIKI": "",
-  "COOKIE_JD": "",
+  "COOKIE_JD": "需要pt_key; pt_pin",
   "ACCESSKEY_BCOMIC": "",
   "COOKIE_TSDM": "",
   "COOKIE_MTBBS": "",
