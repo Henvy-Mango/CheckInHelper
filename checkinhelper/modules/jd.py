@@ -1,5 +1,5 @@
 from checkinhelper.tools.exceptions import CookiesExpired, CheckinHelperException
-from checkinhelper.tools.utils import request, log
+from checkinhelper.tools.utils import request, extract_cookie, log
 
 
 class jdCheckin(object):
@@ -8,16 +8,21 @@ class jdCheckin(object):
     DATA_TEXT = 'body=%7B%22eid%22%3A%22eidA0b08812331seMSXA0dsXTqCiZPyfRGm6vzElwknpHMi61klgN61j7mbK%2Fk5GugV13EpRMi8HxRU3MGMDTMzJXwkB1YWe%2FnoOtdFpOfcoQqhfuoVU%22%2C%22fp%22%3A%22-1%22%2C%22jda%22%3A%22-1%22%2C%22referUrl%22%3A%22-1%22%2C%22rnVersion%22%3A%224.7%22%2C%22shshshfp%22%3A%22-1%22%2C%22shshshfpa%22%3A%22-1%22%2C%22userAgent%22%3A%22-1%22%7D&'
 
     def __init__(self, cookie: str = None):
-        self._cookie = cookie
+        self._cookies = self.get_update_cookie(cookie)
 
     def get_header(self):
         header = {
-            'Cookie': self._cookie,
+            'Cookie': self._cookies,
             'User-Agent': self.USER_AGENT,
             'Accept-Encoding': 'gzip, deflate',
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
         }
         return header
+
+    @staticmethod
+    def get_update_cookie(cookie):
+        return {'pt_key': extract_cookie('pt_key', cookie),
+                'pt_pin': extract_cookie('pt_pin', cookie)}
 
     @property
     def _sign_info(self):
