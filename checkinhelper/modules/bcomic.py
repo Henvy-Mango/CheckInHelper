@@ -1,5 +1,5 @@
 from checkinhelper.tools.exceptions import CheckinHelperException
-from checkinhelper.tools.utils import request, get_time, log
+from checkinhelper.tools.utils import request, get_time, extract_cookie, log
 
 
 class bcomicCheckin(object):
@@ -8,7 +8,7 @@ class bcomicCheckin(object):
     DATA_TEXT = '{}'
 
     def __init__(self, cookie: str = None):
-        self._cookie = cookie
+        self.access_key = extract_cookie('access_key', cookie)
 
     def get_header(self):
         header = {
@@ -31,7 +31,7 @@ class bcomicCheckin(object):
             'buvid': 'XY0A94A068E89A9D2A8E48BD5089252B18BFB',
             'machine': 'Xiaomi+MI+6',
             'is_teenager': '0',
-            'access_key': self._cookie,
+            'access_key': self.access_key,
             'ts': get_time()
         }
         try:
