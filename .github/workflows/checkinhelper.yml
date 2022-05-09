@@ -35,7 +35,7 @@ jobs:
 
       - name: Docker meta for checkinhelper
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
           images: |
             naomi233/checkinhelper
