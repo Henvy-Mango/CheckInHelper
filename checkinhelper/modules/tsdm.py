@@ -3,8 +3,8 @@ from checkinhelper.tools.utils import request, extract_cookie, log
 
 
 class tsdmCheckin(object):
-    SIGN_URL = 'https://www.tsdm39.net/plugin.php?id=minerva:sign_in'
-    REFERER_URL = 'https://www.tsdm39.net/plugin.php?id=minerva:sign_in'
+    SIGN_URL = 'https://www.tsdm39.com/plugin.php?id=minerva:sign_in'
+    REFERER_URL = 'https://www.tsdm39.com/plugin.php?id=minerva:sign_in'
     USER_AGENT = 'Mozilla/5.0 (Linux; Android 9) Xiaomi MI 6 id=3e77fbd1ba5ec2d3 (KHTML, like Gecko) net.tsdm.tut/2.3.1.0 Mobile'
     DATA_TEXT = 'client_hash=31EF24BD5B0196905D7BA25300C5CC58&emotion=1&comment=Android%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%AD%BE%E5%88%B0&'
 
