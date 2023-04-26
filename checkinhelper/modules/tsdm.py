@@ -19,9 +19,9 @@ class tsdmCheckin(object):
 
     @staticmethod
     def get_update_cookie(cookie):
-        return {'s_gkr8_f779_auth': extract_cookie('s_gkr8_f779_auth', cookie),
-                's_gkr8_f779_sid': extract_cookie('s_gkr8_f779_sid', cookie),
-                's_gkr8_f779_saltkey': extract_cookie('s_gkr8_f779_saltkey', cookie), }
+        return {'s_gkr8_f779_auth': extract_cookie('s_gkr8_682f_auth', cookie),
+                's_gkr8_f779_sid': extract_cookie('s_gkr8_682f_sid', cookie),
+                's_gkr8_f779_saltkey': extract_cookie('s_gkr8_682f_saltkey', cookie), }
 
     @property
     def _sign_info(self):
